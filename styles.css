@@ -27,6 +27,7 @@ header p {
     font-size: 1.2rem;
 }
 
+
 /* Navigation */
 nav {
     background-color: #fff;
@@ -46,6 +47,10 @@ nav a {
     color: #1a73e8;
     font-weight: bold;
     transition: color 0.3s;
+}
+
+nav a span {
+    text-decoration: line-through;
 }
 
 nav a:hover {
