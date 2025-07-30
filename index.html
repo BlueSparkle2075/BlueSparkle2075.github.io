@@ -42,12 +42,21 @@
             </p>
             <form>
                 <label for="name">Name Ingame</label>
-                <input type="text" id="name" placeholder="Votre nom" required>
-                <label for="alliance">Alliance</label>
-                <input type="text" id="alliance" placeholder="Nom de l'alliance" required>
+                <input type="text" id="name" required>
+                <label for="gameId">ID</label>
+                <input type="text" id="gameId" required>
+                <label for="furnace">Furnace level</label>
+                <select name="furnace" id="furnace" required>
+                    <option value="30">30 or below</option>
+                    <option value="fc1">FC1</option>
+                    <option value="fc2">FC2</option>
+                    <option value="fc3">FC3</option>
+                    <option value="fc4">FC4</option>
+                    <option value="fc5">FC5</option>
+                </select>
                 <label for="message">Message</label>
                 <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
+                <button type="submit">Send</button>
             </form>
         </section>
     </div>

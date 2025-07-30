@@ -30,7 +30,7 @@ header p {
 
 /* Navigation */
 nav {
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 nav ul {
@@ -41,12 +41,12 @@ nav ul {
 }
 
 nav ul li {
-    background-color: #fff;
+    margin: auto;
     border-radius: 8px;
+    background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     width: fit-content;
-    margin: auto;
 }
 
 nav a {
@@ -86,8 +86,8 @@ nav a:hover {
 
 .alliances p {
     font-size: 18px;
-    margin-bottom: 1rem;
-    color: #1a73e8;
+    color: #0d47a1;
+    margin: 0;
 }
 
 
@@ -104,6 +104,11 @@ nav a:hover {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #1a73e8;
+}
+
+.contact-form p {
+    margin-bottom: 1rem;
+    color: #0d47a1;
 }
 
 .contact-form label {
