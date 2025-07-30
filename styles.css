@@ -156,4 +156,8 @@ footer {
         font-size: 2rem;
     }
 
+    nav ul li {
+        margin: 1rem;
+    }
+
 }
