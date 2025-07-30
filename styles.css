@@ -63,6 +63,8 @@ nav a:hover {
     margin: 2rem auto;
     padding: 0 1rem;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 /* Alliances Section */
@@ -71,10 +73,11 @@ nav a:hover {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
 }
 
 .alliances p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     color: #1a73e8;
 }
