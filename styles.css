@@ -118,8 +118,17 @@ nav a:hover {
     font-weight: bold;
 }
 
+.inline-labels {
+    display: inline-block;
+}
+
+#furnace {
+
+}
+
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+select {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
