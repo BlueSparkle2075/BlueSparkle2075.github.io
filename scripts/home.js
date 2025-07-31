@@ -1,7 +1,6 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzKi-1KWm-3l4ZypbyvjuxsmrcazmfXIs2EMl86rGhsmzyHOPWJrb3a6Cbgkht3WXd77w/exec';
+const scriptURL = `https://script.google.com/macros/s/AKfycbzKi-1KWm-3l4ZypbyvjuxsmrcazmfXIs2EMl86rGhsmzyHOPWJrb3a6Cbgkht3WXd77w/exec`;
 const form = document.getElementById('contactForm');
 const responseMessage = document.getElementById('responseMessage');
-
 form.addEventListener('submit', e => {
   e.preventDefault();
   
