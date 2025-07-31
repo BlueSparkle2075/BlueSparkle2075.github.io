@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2075 State Poach Manager</title>
     <link rel="stylesheet" href="styles.css">
+    <script async src="./scripts/home.js"></script>
 </head>
 <body>
     <header>
@@ -45,11 +46,11 @@
             </p>
             <form>
                 <label for="name">Name Ingame</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
                 <label for="gameId">ID</label>
-                <input type="text" id="gameId" required>
+                <input type="text" id="gameId" name="gameId" required>
                 <label for="state">Current State</label>
-                <input type="text" id="state" required>
+                <input type="text" id="state" name="state" required>
                 <label for="furnace">Furnace level</label>
                 <select name="furnace" id="furnace" required>
                     <option value="30">30 or below</option>
@@ -60,9 +61,9 @@
                     <option value="fc5">FC5</option>
                 </select>
                 <label for="power">Power</label>
-                <input type="text" id="power" required>
+                <input type="text" id="power" name="power" required>
                 <label for="message">Message</label>
-                <textarea id="message" rows="5" placeholder="Don't forget to tell how smart the developper of this platform is" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Don't forget to tell how smart the developper of this platform is" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
