@@ -148,6 +148,10 @@ select {
     background-color: #0d47a1;
 }
 
+#responseMessage {
+    margin-top: 1rem;
+}
+
 /* Footer */
 footer {
     background-color: #1a73e8;

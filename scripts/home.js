@@ -11,15 +11,15 @@ form.addEventListener('submit', e => {
     .then(response => {
       // Gérer la réponse du script Apps Script
       if (response.ok) {
-        responseMessage.textContent = 'Merci ! Votre message a été envoyé avec succès.';
+        responseMessage.textContent = `Application received. Don't hope too much though. I'm lazy and it might take years before I read it.`;
         form.reset(); // Effacer le formulaire
       } else {
-        responseMessage.textContent = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+        responseMessage.textContent = `Something wrong happened. Yes, you have to do it again. Or not.`;
       }
       return response.json();
     })
     .catch(error => {
       console.error('Erreur:', error.message);
-      responseMessage.textContent = 'Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet.';
+      responseMessage.textContent = 'A connection error has occurred. Please check your internet connection.';
     });
 });
