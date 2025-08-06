@@ -44,13 +44,13 @@
                 Any misleading information about your power and your pfp choices will obviously lead to infinite 
                 stupid attacks with the ugliest lancers possible.
             </p>
-            <form id="contactForm">
+            <form id="contactForm" enctype="multipart/form-data">
                 <label for="name">Name Ingame</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" minlength="3" maxlength="16" required>
                 <label for="gameId">ID</label>
-                <input type="text" id="gameId" name="gameId" required>
+                <input type="text" id="gameId" name="gameId" pattern="[1-9] {9}" required>
                 <label for="state">Current State</label>
-                <input type="text" id="state" name="state" required>
+                <input type="text" id="state" name="state" pattern="[1-9] {4}" required>
                 <label for="furnace">Furnace level</label>
                 <select name="furnace" id="furnace" required>
                     <option value="30">30 or below</option>
@@ -61,7 +61,7 @@
                     <option value="fc5">FC5</option>
                 </select>
                 <label for="power">Power</label>
-                <input type="text" id="power" name="power" required>
+                <input type="number" id="power" name="power" min="100000000" required>
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Don't forget to tell how smart the developper of this platform is" required></textarea>
                 <button type="submit">Send</button>
