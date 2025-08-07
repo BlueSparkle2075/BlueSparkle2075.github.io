@@ -44,7 +44,8 @@ nav ul {
 nav ul li {
     margin: auto;
     border-radius: 8px;
-    background-color: #ffbb00;
+    border: 1px #062f66;
+    background: radial-gradient(white, #99c5ff 95%) ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     width: fit-content;
@@ -61,9 +62,6 @@ nav span {
     text-decoration: line-through;
 }
 
-nav ul li:hover {
-    background-color: #ffed9c;
-}
 
 nav a:hover {
     color: #0d47a1;
