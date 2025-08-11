@@ -45,10 +45,11 @@ nav ul li {
     margin: auto;
     border-radius: 8px;
     border: 1px #062f66;
-    background: radial-gradient(white, #99c5ff 95%) ;
+    background: radial-gradient(white 30%, #99c5ff) ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     width: fit-content;
+    text-align: center;
 }
 
 nav a {
