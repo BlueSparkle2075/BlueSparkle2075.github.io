@@ -25,5 +25,7 @@ header h1 {
 
 p {
     font-size: 1.2rem;
+    width: 75%;
+    margin: auto;
 }
 
