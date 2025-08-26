@@ -60,9 +60,9 @@
                     <option value="fc5">FC5</option>
                 </select>
                 <label for="power">Power</label>
-                <input type="text" id="power" name="power" required>
+                <input type="text" id="power" name="power" pattern="[0-9]{7,}" required>
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Don't forget to tell how smart the developper of this platform is" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="This is where you're supposed to pretend you're interested into transfer..." required></textarea>
                 <button type="submit">Send</button>
             </form>
             <p id="responseMessage"></p>

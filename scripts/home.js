@@ -1,25 +1,58 @@
-const scriptURL = `https://script.google.com/macros/s/AKfycbzKi-1KWm-3l4ZypbyvjuxsmrcazmfXIs2EMl86rGhsmzyHOPWJrb3a6Cbgkht3WXd77w/exec`;
-const form = document.getElementById('contactForm');
+const scriptURL = `https://script.google.com/macros/s/AKfycbz-Hp2Dz76OSId5vkx1bnnHOX4TFo3zv9GyZXa3In0PW72ojLpuBiYgIv6SVOJ30OFlfQ/exec`;
+
+
+// Sontaneous applications logic
+
 const responseMessage = document.getElementById('responseMessage');
+
+async function sendFormData(data) {
+  const response = await fetch(scriptURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data) 
+  });
+
+  const result = await response.json(); // Convertit la réponse JSON en objet JavaScript
+
+  // Vérifier le contenu de la réponse
+  if (result.response === 'registered with success') {
+    responseMessage.textContent = `Application received. Don't hope too much though. I'm lazy and it might take years before I read it.`;
+    document.getElementById("contactForm").reset(); // Effacer le formulaire
+  } else if (result.response === 'already in data base') {
+    responseMessage.textContent = "We got it already. Submitting more than once won't make me less lazy.";
+    document.getElementById("contactForm").reset(); // Effacer le formulaire
+  } else {
+    responseMessage.textContent = `Something wrong happened. Yes, you have to submit again. Or not.`;
+  }
+}
+
+
 form.addEventListener('submit', e => {
   e.preventDefault();
-  
-  // Créez un objet FormData à partir du formulaire
-  const formData = new FormData(form);
 
-  fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => {
-      // Gérer la réponse du script Apps Script
-      if (response.ok) {
-        responseMessage.textContent = `Application received. Don't hope too much though. I'm lazy and it might take years before I read it.`;
-        form.reset(); // Effacer le formulaire
-      } else {
-        responseMessage.textContent = `Something wrong happened. Yes, you have to do it again. Or not.`;
-      }
-      return response.json();
-    })
-    .catch(error => {
-      console.error('Erreur:', error.message);
-      responseMessage.textContent = 'A connection error has occurred. Please check your internet connection.';
-    });
+  // Créer le corps de la requête
+  const name = document.getElementById("name").value;
+  const gameId = document.getElementById("gameId").value;
+  const state = document.getElementById("state").value;
+  const furnace = document.getElementById("furnace").value;
+  const power = document.getElementById("power").value;
+  const message = document.getElementById("message").value;
+  const action = 'spontCandidate';
+  const body = {
+    name,
+    gameId,
+    state,
+    furnace,
+    power,
+    message,
+    action
+  };
+
+  sendFormData(body);
+  
 });
+
+
+// login logic
