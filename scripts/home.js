@@ -1,4 +1,4 @@
-const scriptURL = `https://script.google.com/macros/s/AKfycbz-Hp2Dz76OSId5vkx1bnnHOX4TFo3zv9GyZXa3In0PW72ojLpuBiYgIv6SVOJ30OFlfQ/exec`;
+const scriptURL = `https://script.google.com/macros/s/AKfycbxVLl50vHeoKvv4c6VlNJXzpJFoG7nR42o3b8YnD4zlmjtQpzdDLLJCzzsJCqJxwZgI9A/exec`;
 
 
 // Sontaneous applications logic
