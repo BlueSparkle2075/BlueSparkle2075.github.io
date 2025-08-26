@@ -1,57 +1,50 @@
-const scriptURL = `https://script.google.com/macros/s/AKfycbzcyWba-Z7fTk0K6_IrhNOL1YR3vL_vknjVPd2L1s7EalEGBp2_JlaWrSBirIkbjf3OMA/exec`;
-
-// Sontaneous applications logic
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxExKYWs0HFsTd5IH1mycZbqa5n87dJFvz6MRDagqCg-BkeOHdmEuZEvegAMAfS_4vAXA/exec'; // Vérifie que c'est la bonne URL !
 
 const responseMessage = document.getElementById('responseMessage');
-const form = document.getElementById("contactForm");
+const form = document.getElementById('contactForm');
 
 async function sendFormData(data) {
-  const response = await fetch(scriptURL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data) 
-  });
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-  const result = await response.json(); // Convertit la réponse JSON en objet JavaScript
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP : ${response.status}`);
+    }
 
-  // Vérifier le contenu de la réponse
-  if (result.response === 'registered with success') {
-    responseMessage.textContent = `Application received. Don't hope too much though. I'm lazy and it might take years before I read it.`;
-    form.reset(); // Effacer le formulaire
-  } else if (result.response === 'already in data base') {
-    responseMessage.textContent = "We got it already. Submitting more than once won't make me less lazy.";
-    form.reset(); // Effacer le formulaire
-  } else {
-    responseMessage.textContent = `Something wrong happened. Yes, you have to submit again. Or not.`;
+    const result = await response.json();
+    if (result.response === 'registered with success') {
+      responseMessage.textContent = `Application received. Don't hope too much though. I'm lazy and it might take years before I read it.`;
+      form.reset();
+    } else if (result.response === 'already in data base') {
+      responseMessage.textContent = 'We got it already. Submitting more than once won’t make me less lazy.';
+      form.reset();
+    } else {
+      responseMessage.textContent = `Something wrong happened: ${result.message || 'Unknown error'}. Yes, you have to submit again. Or not.`;
+    }
+  } catch (error) {
+    console.error('Erreur lors de l’envoi :', error);
+    responseMessage.textContent = `Erreur : ${error.message}. Try again, or not. Up to you.`;
   }
 }
 
-
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  // Créer le corps de la requête
-  const name = document.getElementById("name").value;
-  const gameId = document.getElementById("gameId").value;
-  const state = document.getElementById("state").value;
-  const furnace = document.getElementById("furnace").value;
-  const power = document.getElementById("power").value;
-  const message = document.getElementById("message").value;
-  const action = 'spontCandidate';
   const body = {
-    name,
-    gameId,
-    state,
-    furnace,
-    power,
-    message,
-    action
+    name: document.getElementById('name').value,
+    gameId: document.getElementById('gameId').value,
+    state: document.getElementById('state').value,
+    furnace: document.getElementById('furnace').value,
+    power: document.getElementById('power').value,
+    message: document.getElementById('message').value,
+    action: 'spontCandidate',
   };
-
   sendFormData(body);
-  
 });
 
 
