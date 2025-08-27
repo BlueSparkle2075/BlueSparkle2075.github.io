@@ -1,16 +1,20 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycby737oghXHRr_t2i0HzrvW0Pkev0r4J9xxIiJLDYEgIYkLvs6YabxbxcEh__oQmhG3dZw/exec'; // Vérifie que c'est la bonne URL !
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzzK5b1ntp4_8CzVAh0W3ilFA--29AG2nGLqKUK2zFx1qF1DKHVD6i7_l5pFI_yEl7OLw/exec'; // Vérifie que c'est la bonne URL !
 
 const responseMessage = document.getElementById('responseMessage');
 const form = document.getElementById('contactForm');
 
 async function sendFormData(data) {
+
+  const formData = new FormData();
+  const dataKeys = Object.keys(data);
+  for (let key of dataKeys) {
+    formData.append(key, data[key]);
+  }
+
   try {
     const response = await fetch(scriptURL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'text/plain',
-      },
-      body: JSON.stringify(data),
+      body: formData,
     });
 
     if (!response.ok) {
