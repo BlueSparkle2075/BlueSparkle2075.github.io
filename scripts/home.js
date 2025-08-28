@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzR7H7Aon1ucXg5USzM6dT3ZLypTvzCHJkEctoYsy26nlyzDlIJqHkwINHTDZPtJ1Cxug/exec'; // Vérifie que c'est la bonne URL !
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyxSvDj3FxPCOHjGhRK1_Z9xn2q3LeE4NTaYZ-AnwNfNSNOPjMouKLd7U3GJDqmWaCwXg/exec'; // Vérifie que c'est la bonne URL !
 
 const responseMessage = document.getElementById('responseMessage');
 const form = document.getElementById('contactForm');
@@ -34,7 +34,7 @@ async function sendFormData(data) {
   //   }
   } catch (error) {
     console.error('Erreur lors de l’envoi :', error);
-    responseMessage.textContent = `Erreur : ${error.message}. Try again, or not. Up to you.`;
+    responseMessage.textContent = `${error.message}. Try again, or not. Up to you.`;
   }
   
 }
