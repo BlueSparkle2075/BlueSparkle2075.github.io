@@ -31,17 +31,14 @@ header p {
 /* Navigation */
 nav {
     padding: 1rem 1rem 0;
-}
-
-nav ul {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-nav ul li {
+
+.signupbtn {
     margin: auto;
     border-radius: 8px;
     border: 1px #062f66;
@@ -49,23 +46,17 @@ nav ul li {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     width: fit-content;
+    font-size: 1.5rem;
     text-align: center;
-}
-
-nav a {
     text-decoration: none;
     color: #1a73e8;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-nav span {
-    text-decoration: line-through;
-}
-
-
-nav a:hover {
+.signupbtn:hover {
     color: #0d47a1;
+    cursor: pointer;
 }
 
 /* Main Content */
@@ -160,15 +151,98 @@ footer {
     margin-top: 2rem;
 }
 
+
+/* Login pop-up */
+
+.loginpopup {
+    display: none;
+    height: fit-content;
+    width: 35%;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background: linear-gradient(315deg, #1353b3, #062f66);
+    color: white;
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.loginpopup p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#loginForm {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 0.5rem;
+    margin: 0.5rem;
+    align-content: center;
+}
+
+.loginpopup label {
+    text-align: end;
+}
+
+
+
+#closepopup {
+    height: 1.4rem;
+    width: 1.4rem;
+    margin: 5px 0px 0 5px;
+    border: 0px;
+    font-size: 1.2rem;
+    background-color: #f0f2f5;
+    cursor: pointer;
+}
+
+#closepopup:hover {
+    background-color: rgb(218, 0, 0);
+    color: white;
+}
+
+#loginForm button {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+    width: 25%;
+    justify-self: center;
+    cursor: pointer;
+    height: 2rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color:  #1a73e8;
+    font-size: 1.2rem;
+}
+
+#loginForm button:hover {
+    background-color: #001535;
+}
+
+
 /* Responsive Design */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
     header h1 {
         font-size: 2rem;
     }
 
-    nav ul li {
-        margin: 1rem;
+
+}
+
+@media only screen and (max-width: 835px) {
+
+    .loginpopup {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .loginpopup p {
+        margin-top: 20%;
     }
 
 }

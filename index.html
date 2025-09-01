@@ -17,9 +17,7 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="/fuckyou.html">The real stuff is after you click here</a></li>
-        </ul>
+        <button class="signupbtn" id="startButton">The real stuff is after you click here</button>
     </nav>
 
     <div class="container">
@@ -36,11 +34,10 @@
         <section class="contact-form">
             <h2>Spontaneous Applications</h2>
             <p>
-                You are a spy, or you maybe fell on this page by mistake? Don't worry, your thoughtfull 
-                favorite webmaster (me), made this form, nobody wants you to be bored. Why spying on us
-                if it's not because you want to transfer in 2075? This state is great, go ahead, nobody is
-                judging, just fill the fucking form. <br>
-                Any misleading information about your power and your pfp choices will obviously lead to infinite 
+                You are a spy, or you maybe fell on this page by mistake? Don't worry, you are still allowed to 
+                send an application. If you have the time to spy on us it means you're probably bored in your 
+                state, so go ahead and fill the damned form.<br>
+                Any misleading information about your power and/or any bad pfp choices will obviously lead to infinite 
                 stupid attacks with the ugliest lancers possible.
             </p>
             <form id="contactForm" enctype="multipart/form-data">
@@ -69,8 +66,22 @@
         </section>
     </div>
 
+    <div class="loginpopup" id="loginpopup">
+        <button id="closepopup">X</button>
+        <p>
+            Nothing to see if you can't login 😼
+        </p>
+        <form id="loginForm" enctype="multipart/form-data">
+            <label for="userId">ID:</label>
+            <input type="text" name="userId" id="userId" required minlength="4" maxlength="11">
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="password" required minlength="13" maxlength="16">
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+
     <footer>
-        <p>Webmaster contact : blue.sparkling.cat@gmail.com</p>
+        <p>Don't send me mails, I never read them : blue.sparkling.cat@gmail.com</p>
     </footer>
 </body>
 </html>
