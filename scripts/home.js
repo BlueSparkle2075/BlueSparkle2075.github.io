@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyxSvDj3FxPCOHjGhRK1_Z9xn2q3LeE4NTaYZ-AnwNfNSNOPjMouKLd7U3GJDqmWaCwXg/exec'; // Vérifie que c'est la bonne URL !
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzK8n9LfshYVYDsDFz8aXchf3L1BCuOkFZv4C9T6p4QIZIQ7EYkp8IYbEaddpiXKYUtvA/exec'; // Vérifie que c'est la bonne URL !
 
 // Login logic
 /* 
@@ -25,6 +25,47 @@ startButton.addEventListener('click', (e) => {
 
 closePopup.addEventListener('click', (e) => {
   loginPopup.style.display = 'none';
+})
+
+
+// envoi des identifiants à App Script
+
+const loginForm = document.getElementById('loginForm');
+
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const idInput = document.getElementById('userId');
+  const passwordInput = document.getElementById('password');
+  const loginData = new FormData();
+  loginData.append('userInput', idInput.value);
+  loginData.append('passwordInput', passwordInput.value);
+  loginData.append('action', 'login');
+  fetch(scriptURL, {
+    method: 'POST',
+    body: loginData,
+  })
+  .then((res) => res.json())
+  .then((res) => {
+    if (res.access === 'granted') {
+      // enregistrer en mémoire locale les trucs pour les pages d'après
+      const userData = {
+        user: res.name,
+        alliance: res.alliance,
+        isTM: res.isTM
+      }
+      localStorage.setItem('userData', JSON.stringify(userData));
+      // rediriger vers la bonne page qui sera remplie de manière dynamique en fonction de l'utilisateur
+      // parce que je suis une feignasse
+      window.location.href = 'poach-manager.html';
+    } else {
+      // rediriger vers la page fuck you
+      window.location.href = 'fuckyou.html';
+    }
+  })
+  .catch((er) => {
+    // autres erreurs de l'échange des données
+    console.log(er.message);
+  })
 })
 
 
