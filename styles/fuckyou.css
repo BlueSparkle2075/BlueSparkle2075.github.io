@@ -23,9 +23,45 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
-p {
-    font-size: 1.2rem;
-    width: 75%;
-    margin: 2rem auto;
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
+section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    max-width: 50%;
+    margin: 2rem;
+    text-align: justify;
+}
+
+
+p {
+    font-size: 1.2rem;
+    margin: auto;
+}
+
+img {
+    width: auto;
+    max-height: 400px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .box {
+        flex-wrap: wrap;
+    }
+
+    section {
+        max-width: none;
+    }
+
+
+}
